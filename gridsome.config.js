@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-    siteName: 'Gridsome With Vuex Modules Shop',
+    siteName: 'Gridsome With Vuex Modules - Shopping Cart Example',
     plugins: [
         {
             // Create products from markdown files
@@ -17,7 +17,7 @@ module.exports = {
         }
     ],
     templates: {
-        Product: '/:title',
+        Product: '/:name',
     },
     transformers: {
         remark: {}

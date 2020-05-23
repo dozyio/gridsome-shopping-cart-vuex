@@ -1,5 +1,5 @@
 ---
-title: Awesome Red Widgets Book
+name: Awesome Red Widgets Book
 author: J. Bloggs
 slug: awesome-red-widgets-book-by-j-bloggs
 price: £9.99

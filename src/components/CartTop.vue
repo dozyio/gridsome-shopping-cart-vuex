@@ -1,26 +1,21 @@
 <template>
     <div>
-        <span>Cart ({{ countProducts }} item<span v-if="countProducts == 0 || countProducts > 1">s</span>)</span>
-        <div v-for="(product, index) in getProducts">
-            {{ product.name }} - Qty: {{ product.quantity }} <button v-on:click="removeFromCart(index)">X</button>
-        </div>
+        <ClientOnly>
+            <g-link to="/cart/"><span>Cart ({{ countProducts }} item<span v-if="countProducts == 0 || countProducts > 1">s</span>)</span></g-link>
+        </ClientOnly>
     </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 
 export default {
-    data () {
-        return {
-        }
-    },
     computed: {
-        getProducts () {
-            return this.$store.state.cart.products
-        },
-        countProducts () {
-            return this.$store.state.cart.products.length
-        }
+        //mapping getters from cart vuex module
+        ...mapGetters('cart', {
+            getProducts: 'getProducts',
+            countProducts: 'count'
+        }),
     },
     methods: {
         removeFromCart(index){

@@ -1,10 +1,11 @@
 <template>
-  <Layout>
-    <h1>Home</h1>
-    <div v-for="({node}, index) of $page.products.edges" :key="node.id">
-        <g-link :to="node.path">{{ node.name }}</g-link>
-    </div>
-  </Layout>
+    <Layout>
+        <h1>Home</h1>
+        <div v-for="edge in $page.products.edges" :key="edge.node.id">
+            <g-link :to="edge.node.path">{{ edge.node.name }}</g-link>
+        </div>
+        <Pager :info="$page.products.pageInfo"/>
+    </Layout>
 </template>
 <page-query>
     query($page: Int){
@@ -24,10 +25,15 @@
     }
 </page-query>
 <script>
+import { Pager } from 'gridsome'
+
 export default {
-  metaInfo: {
-    title: 'Hello, world!'
-  }
+    components: {
+        Pager
+    },
+    metaInfo: {
+        title: 'Hello, world!'
+    }
 }
 </script>
 

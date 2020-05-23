@@ -1,5 +1,5 @@
 ---
-title: The Blue Widgets Book
+name: The Blue Widgets Book
 author: J. Bloggs
 slug: blue-widgets-book-by-j-bloggs
 price: £12.99

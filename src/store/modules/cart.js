@@ -3,9 +3,19 @@ const state = () => ({
 })
 
 const getters = {
-    getProducts: (state, getters) => {
+    getProducts: state => {
         return state.products
     },
+    count: state => {
+        return state.products.length
+    },
+    total: state => {
+        let total = 0;
+        state.products.forEach(product => {
+            total += Number(product.price.replace('£',''))
+        })
+        return total
+    }
 }
 
 const actions = {
