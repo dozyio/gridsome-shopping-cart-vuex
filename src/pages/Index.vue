@@ -2,7 +2,7 @@
   <Layout>
     <h1>Home</h1>
     <div v-for="({node}, index) of $page.products.edges" :key="node.id">
-        <g-link :to="node.path">{{ node.title }}</g-link>
+        <g-link :to="node.path">{{ node.name }}</g-link>
     </div>
   </Layout>
 </template>
@@ -16,7 +16,7 @@
             edges {
                 node {
                     id
-                    title
+                    name
                     path
                 }
             }

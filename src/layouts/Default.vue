@@ -6,8 +6,8 @@
       </strong>
       <nav class="nav">
         <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
       </nav>
+      <cart-top />
     </header>
     <slot/>
   </div>
@@ -20,7 +20,14 @@ query {
   }
 }
 </static-query>
-
+<script>
+import CartTop from "~/components/CartTop"
+export default {
+    components: {
+        CartTop
+    }
+}
+</script>
 <style>
 body {
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
