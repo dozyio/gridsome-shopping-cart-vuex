@@ -1,13 +1,17 @@
 <template>
     <layout>
-        <h1>$page.product.title</h1>
-        <p>$page.product.content</p>
-        <button :click="addToCart">Add To Cart</button>
+        <h1>{{ $page.product.title }}</h1>
+        <h4>by {{ $page.product.author }}</h4>
+        <div v-html="$page.product.content" />
+        <div v-html="$page.product.price" />
+        <button v-on:click="addToCart">Add To Cart</button>
     </layout>
 </template>
 <page-query>
     query Product($id: ID!) {
         product: product(id: $id) {
+            title
+            content
             path
             price
             author

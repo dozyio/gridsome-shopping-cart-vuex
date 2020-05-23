@@ -6,17 +6,20 @@
 
 module.exports = {
     siteName: 'Gridsome With Vuex Modules Shop',
-    templates: {
-        Product: '/:title'
-    },
     plugins: [
         {
             // Create products from markdown files
             use: '@gridsome/source-filesystem',
             options: {
                 typeName: 'Product',
-                path: './content/products/*.md'
+                path: './content/products/**/*.md'
             }
         }
     ],
+    templates: {
+        Product: '/:title',
+    },
+    transformers: {
+        remark: {}
+    }
 }

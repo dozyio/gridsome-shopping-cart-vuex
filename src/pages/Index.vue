@@ -1,11 +1,18 @@
 <template>
   <Layout>
     <h1>Home</h1>
+    <div v-for="({node}, index) of $page.products.edges" :key="node.id">
+        <g-link :to="node.path">{{ node.title }}</g-link>
+    </div>
   </Layout>
 </template>
 <page-query>
     query($page: Int){
-        products: allProducts() {
+        products: allProduct(perPage: 10, page: $page) @paginate {
+            pageInfo {
+                totalPages
+                currentPage
+            }
             edges {
                 node {
                     id
