@@ -49,7 +49,6 @@ export default {
             this.$store.commit('cart/remove', index)
         }
     }
-
 }
 </script>
 <style scoped>

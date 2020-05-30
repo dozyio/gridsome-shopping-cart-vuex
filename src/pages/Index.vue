@@ -1,10 +1,11 @@
 <template>
     <Layout>
-        <h1>Home</h1>
+        <h1>Shop Homepage</h1>
         <div v-for="edge in $page.products.edges" :key="edge.node.id">
             <g-link :to="edge.node.path">{{ edge.node.name }}</g-link>
         </div>
         <Pager :info="$page.products.pageInfo"/>
+        <footer>Source code available here - <a href="https://github.com/dozyio/gridsome-shopping-cart-vuex">https://github.com/dozyio/gridsome-shopping-cart-vuex</a>
     </Layout>
 </template>
 <page-query>
@@ -32,7 +33,7 @@ export default {
         Pager
     },
     metaInfo: {
-        title: 'Hello, world!'
+        title: 'Shop Home'
     }
 }
 </script>
