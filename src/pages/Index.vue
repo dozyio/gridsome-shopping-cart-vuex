@@ -5,7 +5,7 @@
             <g-link :to="edge.node.path">{{ edge.node.name }}</g-link>
         </div>
         <Pager :info="$page.products.pageInfo"/>
-        <footer>Source code available here - <a href="https://github.com/dozyio/gridsome-shopping-cart-vuex">https://github.com/dozyio/gridsome-shopping-cart-vuex</a>
+        <footer>Source code available here - <a href="https://github.com/dozyio/gridsome-shopping-cart-vuex">https://github.com/dozyio/gridsome-shopping-cart-vuex</a></footer>
     </Layout>
 </template>
 <page-query>
@@ -39,4 +39,5 @@ export default {
 </script>
 
 <style scoped>
+footer { margin-top: 2em; }
 </style>
